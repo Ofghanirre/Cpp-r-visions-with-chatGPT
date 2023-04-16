@@ -1,5 +1,5 @@
-Réalisé par Antonin JEAN
-Le 16/04/2023
+### Réalisé par Antonin JEAN
+#### Le 16/04/2023
 
 Ce document est une liste de court résumé réalisé avec chatGpt pour définir rapidement les notions de cours demandés à l'examen final de CPP de master 1 de l'IGM.
 
@@ -8,6 +8,7 @@ Les fichiers sont au format markdown .md et peuvent être facilement vu depuis u
 exemple VSCODE:
 `CTRL + SHIFT + V`
 
+---
 
 Avertissement: les réponses fournies par ChatGPT sont générées par une intelligence artificielle et peuvent ne pas être parfaitement exactes ou appropriées dans tous les cas. Il est important de toujours utiliser son jugement et sa compréhension personnels pour valider les réponses fournies et les adapter en fonction de son propre contexte.
 
@@ -16,3 +17,9 @@ Bien que ChatGPT soit formé sur une grande quantité de données et ait la capa
 En outre, il est important de noter que les technologies d'intelligence artificielle sont en constante évolution et que les réponses fournies par ChatGPT peuvent devenir obsolètes ou être mises à jour avec le temps. Il est donc recommandé de toujours vérifier les dernières informations et de se tenir informé des développements dans le domaine.
 
 En résumé, bien que ChatGPT puisse fournir des réponses utiles et précises dans de nombreux cas, il est important de toujours utiliser son propre jugement et de valider les réponses en fonction de son propre contexte.
+
+Par manque de temps, les réponses ne sont pas vérifiées et donc je m'attends à ce que vous gardiez un sens critique
+
+---
+
+J'espère que ce doc pourra vous aider et bonne chance pour l'examen !
