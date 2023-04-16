@@ -1,0 +1,5 @@
+L'ownership a un impact direct sur la durée de vie des objets. En effet, un objet dont la possession est transmise via une relation d'ownership aura une durée de vie déterminée par le cycle de vie de son propriétaire. Si le propriétaire est détruit, alors l'objet sera également détruit.
+
+Par exemple, si un objet A est créé sur la pile et un objet B est créé sur le tas (avec un pointeur pour y accéder), si l'objet A a une relation d'ownership sur l'objet B, cela signifie que l'objet A est responsable de la libération de la mémoire allouée pour l'objet B. Si l'objet A est détruit avant l'objet B, alors la mémoire allouée pour l'objet B sera perdue car il n'y aura plus de pointeur pour y accéder et libérer la mémoire.
+
+Il est donc important de bien gérer les relations d'ownership dans un programme afin d'éviter les fuites de mémoire ou les accès à des objets détruits. C'est pourquoi l'utilisation de smart pointers, tels que unique_ptr, peut être très utile pour gérer les relations d'ownership de manière sûre et efficace.

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP12</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="tp-12---révisions">TP 12 - Révisions</h1>
+<p>Cette dernière séance de TP sera dédiée à la révision du prochain et dernier TP noté.</p>
+<h2 id="format">Format</h2>
+<p>Le TP noté n°3 se présentera sous la forme de 3 exercices de code + un QCM. La séance durera 3h, ou 4h pour les tiers-temps.</p>
+<h2 id="compétences-attendues">Compétences attendues</h2>
+<p>Ci-dessous, vous trouverez la liste des compétences qui seront évaluées lors du TP noté n°3.</p>
+<h3 id="langage">Langage</h3>
+<h4 id="général">Général</h4>
+<ul>
+<li>passage de paramètres à un programme</li>
+<li>types primitifs</li>
+<li>utilisation de référence et référence-constante</li>
+<li>utilisation d’exceptions (lever une exception, <s>la traiter</s>, <s>définition de nouveaux types</s>)</li>
+<li>casts C++</li>
+<li>définition de lambdas</li>
+<li>définition de fonctions-template</li>
+<li>définition de types-template</li>
+</ul>
+<h4 id="classes">Classes</h4>
+<ul>
+<li>définition de classes</li>
+<li>définition de constructeur et liste d’initialisation</li>
+<li>construction et assignation par copie</li>
+<li>construction et assignation par déplacement (deux questions pratiques à ce sujet au final, désolée, j’ai changé d’avis par rapport à ce que j’avais dit en cours il y a deux semaines… :S)</li>
+<li>définition de destructeur</li>
+<li>définition d’opérateurs (arithmétiques, comparaison, flux, assignation)</li>
+<li>définition de fonctions et attributs de classes (“champs statiques”)</li>
+<li>visibilité des attributs</li>
+</ul>
+<h4 id="héritage">Héritage</h4>
+<ul>
+<li>définition d’une relation d’héritage publique</li>
+<li>fonction-membres virtuelles et rédéfinition</li>
+<li>fonction-membres virtuelles pure et classes abstraites</li>
+<li>liaison statique vs liaison dynamique d’une fonction-membre</li>
+</ul>
+<h3 id="librairie-standard">Librairie standard</h3>
+<ul>
+<li>utilisation de conteneurs</li>
+<li>lecture de la documentation</li>
+<li>complexité des opérations</li>
+<li>utilisation de la librairie algorithmes</li>
+<li>smart pointers (en particulier, utilisation de unique_ptr)</li>
+<li>utilisation de string</li>
+<li>autres types usuels (optional, pair, tuple, function)</li>
+<li>utilisation de move</li>
+<li>exceptions standards (stdexcept)</li>
+</ul>
+<h3 id="théorie-etou-méthodologie">Théorie et/ou méthodologie</h3>
+<ul>
+<li>utilisation de const</li>
+<li>cas d’utilisation de types-valeur et types-référence</li>
+<li>identification des relations d’ownership dans du code existant</li>
+<li>décisions d’implémentation pour représenter une relation d’ownership donnée</li>
+<li>impact de l’ownership sur les durées de vie</li>
+<li>l-value et de r-value : identification et sélection de surcharges</li>
+</ul>
+<h2 id="exercice-1---algorithmes--lambdas">Exercice 1 - Algorithmes &amp; lambdas</h2>
+<p>Comme le TP8 n’a pas été permis d’aborder ces compétences suffisamment, nous vous proposons ce petit exercice pour vous donner le temps d’y revenir. Pensez-bien également à retourner lire le cours en ligne à ce sujet.</p>
+<ol>
+<li>
+<p>Pour chacun des besoins exprimés ci-dessous, recherchez sur <a href="https://en.cppreference.com/w/cpp/algorithm">cette page</a> la fonction la plus adaptée pour y répondre.<br>
+a. <em>Je souhaite récupérer le premier élément d’une plage de chaînes qui contient exactement 8 lettres.</em><br>
+b. <em>Je souhaite calculer la multiplication terme à terme entre deux plages contenant le même nombre de valeurs.</em><br>
+c. <em>Je souhaite assigner la valeur 3 à chacun des éléments d’une plage.</em><br>
+d. <em>Je souhaite savoir si tous les éléments d’une plages sont négatifs.</em><br>
+e. <em>Je souhaite réordonner une plage du plus grand élément au plus petit.</em><br>
+f. <em>Je souhaite calculer le nombre total de caractères présents dans une plage qui contient des mots.</em></p>
+</li>
+<li>
+<p>Pour chacun des snippets de code ci-dessous, indiquez si les captures dans les lambdas sont effectuées par valeur ou par référence. Indiquez ensuite si le code compile ou non. Si oui, prédisez le contenu de la console, si non, proposez une correction du code.</p>
+</li>
+</ol>
+<pre class=" language-cpp"><code class="prism  language-cpp"><span class="token comment">//////////////////////////////////////////////////////</span>
+
+<span class="token keyword">const</span> <span class="token keyword">auto</span> values <span class="token operator">=</span> std<span class="token operator">::</span>vector <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">27</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> bounds <span class="token operator">=</span> std<span class="token operator">::</span>pair <span class="token punctuation">{</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token keyword">auto</span> predicate <span class="token operator">=</span> <span class="token punctuation">[</span>bounds<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> bounds<span class="token punctuation">.</span>first <span class="token operator">&lt;=</span> p <span class="token operator">&amp;&amp;</span> p <span class="token operator">&lt;=</span> bounds<span class="token punctuation">.</span>second<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+bounds <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span><span class="token function">count_if</span><span class="token punctuation">(</span>values<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> values<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> predicate<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+
+<span class="token comment">//////////////////////////////////////////////////////</span>
+
+<span class="token keyword">const</span> <span class="token keyword">auto</span> values <span class="token operator">=</span> std<span class="token operator">::</span>vector <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">27</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> bounds <span class="token operator">=</span> std<span class="token operator">::</span>pair <span class="token punctuation">{</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token keyword">auto</span> predicate <span class="token operator">=</span> <span class="token punctuation">[</span>min <span class="token operator">=</span> bounds<span class="token punctuation">.</span>first<span class="token punctuation">,</span> max <span class="token operator">=</span> <span class="token operator">&amp;</span>bounds<span class="token punctuation">.</span>second<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> min <span class="token operator">&lt;=</span> p <span class="token operator">&amp;&amp;</span> p <span class="token operator">&lt;=</span> max<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+bounds <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span><span class="token function">count_if</span><span class="token punctuation">(</span>values<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> values<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> predicate<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+
+<span class="token comment">//////////////////////////////////////////////////////</span>
+
+<span class="token keyword">const</span> <span class="token keyword">auto</span> values <span class="token operator">=</span> std<span class="token operator">::</span>vector <span class="token punctuation">{</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">27</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> sum_odd <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+std<span class="token operator">::</span><span class="token function">for_each</span><span class="token punctuation">(</span>values<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> values<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token operator">&amp;</span>sum_odd<span class="token punctuation">,</span> odd <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token keyword">int</span> v<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	sum_odd <span class="token operator">+</span><span class="token operator">=</span> odd <span class="token operator">?</span> v <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	odd <span class="token operator">=</span> <span class="token operator">!</span>odd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> sum_odd <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+
+<span class="token comment">//////////////////////////////////////////////////////</span>
+</code></pre>
+<ol start="3">
+<li>
+<p>Complétez les snippets de code.<br>
+a. <a href="https://godbolt.org/z/6nKq4G7Ma">https://godbolt.org/z/6nKq4G7Ma</a><br>
+b. <a href="https://godbolt.org/z/jz1EYq4WM">https://godbolt.org/z/jz1EYq4WM</a></p>
+</li>
+<li>
+<p>Les <code>std::function</code> sont des objets qui permettent d’encapsuler des “fonctions au sens large” : des fonctions libres, des fonctions-membre, des lambdas, ou encore des foncteurs. Implémentez le code de la classe Calculator afin que le programme compile et effectue les calculs demandés : <a href="https://godbolt.org/z/q1vnYsWz6">https://godbolt.org/z/q1vnYsWz6</a>.</p>
+</li>
+</ol>
+<h2 id="exercice-2---on-demand">Exercice 2 - On-demand</h2>
+<p>Prenez quelques minutes pour réfléchir à une ou deux compétences que vous pensez avoir besoin de réviser. Répartissez-vous en petits groupes (binômes ou quelques personnes) pour revoir ensemble le TP abordant cette notion. Vous pouvez éventuellement demander à votre chargé de TP qu’il vous propose des exercices complémentaires.</p>
+</div>
+</body>
+
+</html>
